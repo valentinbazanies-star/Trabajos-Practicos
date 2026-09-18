@@ -1,8 +1,0 @@
-CAMBIOS A FUTURO
-
-Botones para navegar abajo (cambiar el sistema de nav basico)
-
-Cuando se cree los filtros juntar cada imagen de categoria con un link que lleve a productos
-y filtre la categoria correspondiente de la imagen
-
-
