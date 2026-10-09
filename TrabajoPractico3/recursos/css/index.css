@@ -1,4 +1,3 @@
-
 :root {
     --color-bg-principal: #0F0F0F;
     --color-bg-tarjeta: #1B1B1D;
@@ -38,9 +37,7 @@ img {
     display: block;
 }
 
-/* ==========================================================================
-   CABECERA PRINCIPAL
-   ========================================================================== */
+/* --- header --- */
 .cabecera-principal {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -78,16 +75,13 @@ img {
     transform: scale(2);
 }
 
-/* ==========================================================================
-   CONTENIDO PRINCIPAL
-   ========================================================================== */
+/* ---- contenido main ---*/
 .contenido_principal {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 40px 24px;
 }
 
-/* Imagen Hero principal */
 .contenido_principal > img {
     width: 100%;
     max-height: 520px;
@@ -97,7 +91,6 @@ img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Título y descripción principal */
 .contenido_principal > h1 {
     font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 900;
@@ -115,9 +108,6 @@ img {
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   SECCIÓN 1: BENEFICIOS / CARACTERÍSTICAS (4 Columnas)
-   ========================================================================== */
 .contenido_principal > section:nth-of-type(1) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -159,9 +149,6 @@ img {
     line-height: 1.5;
 }
 
-/* ==========================================================================
-   SECCIÓN 2: CATEGORÍAS DEL LABORATORIO
-   ========================================================================== */
 .contenido_principal > section:nth-of-type(2) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -169,7 +156,6 @@ img {
     margin-bottom: 80px;
 }
 
-/* Encabezados de la sección de categorías (abarcan el ancho completo de las 2 columnas) */
 .contenido_principal > section:nth-of-type(2) > p {
     grid-column: 1 / -1;
     color: var(--color-primario);
@@ -189,7 +175,6 @@ img {
     margin-bottom: 16px;
 }
 
-/* Tarjetas de categorías individuales */
 .contenido_principal > section:nth-of-type(2) article {
     position: relative;
     background-color: var(--color-bg-tarjeta);
@@ -229,7 +214,6 @@ img {
     filter: brightness(0.8);
 }
 
-/* Título de la categoría superpuesto sobre la imagen */
 .contenido_principal > section:nth-of-type(2) article h3 {
     position: relative;
     z-index: 2;
@@ -243,7 +227,6 @@ img {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Insignia / Ícono rojo en la esquina superior izquierda estilo mockup */
 .contenido_principal > section:nth-of-type(2) article::before {
     content: "";
     position: absolute;
@@ -257,9 +240,7 @@ img {
     pointer-events: none;
 }
 
-/* ==========================================================================
-   PIE DE PÁGINA
-   ========================================================================== */
+/* ---- footer ---*/
 .pie-principal {
     background-color: #0A0A0A;
     border-top: 1px solid var(--color-borde);
@@ -294,9 +275,7 @@ img {
     background-color: var(--color-primario-hover);
 }
 
-/* ==========================================================================
-   RESPONSIVIDAD (Tablets y Dispositivos Móviles)
-   ========================================================================== */
+/* -- responsive ----*/
 @media (max-width: 992px) {
     .contenido_principal > section:nth-of-type(1) {
         grid-template-columns: repeat(2, 1fr);
