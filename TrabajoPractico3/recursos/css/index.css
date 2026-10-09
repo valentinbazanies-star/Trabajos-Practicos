@@ -1,0 +1,325 @@
+
+:root {
+    --color-bg-principal: #0F0F0F;
+    --color-bg-tarjeta: #1B1B1D;
+    --color-bg-hover: #242428;
+    --color-primario: #E51D1D;
+    --color-primario-hover: #C81515;
+    --color-texto-blanco: #FFFFFF;
+    --color-texto-gris: #9E9E9E;
+    --color-borde: #2A2A2E;
+    --fuente-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-principal);
+    color: var(--color-texto-blanco);
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+   
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   CABECERA PRINCIPAL
+   ========================================================================== */
+.cabecera-principal {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.cabecera-principal nav {
+    display: flex;
+    gap: 32px;
+}
+
+.cabecera-principal nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-texto-gris);
+}
+
+.cabecera-principal nav a:hover {
+    color: var(--color-texto-blanco);
+}
+.cabecera-principal > a {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+   
+}
+
+.cabecera-principal > a img {
+    transform: scale(2);
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL
+   ========================================================================== */
+.contenido_principal {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* Imagen Hero principal */
+.contenido_principal > img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Título y descripción principal */
+.contenido_principal > h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.contenido_principal > p {
+    color: var(--color-texto-gris);
+    font-size: 1.1rem;
+    max-width: 780px;
+    margin-bottom: 64px;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECCIÓN 1: BENEFICIOS / CARACTERÍSTICAS (4 Columnas)
+   ========================================================================== */
+.contenido_principal > section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.contenido_principal > section:nth-of-type(1) article {
+    background-color: var(--color-bg-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contenido_principal > section:nth-of-type(1) article:hover {
+    transform: translateY(-4px);
+    border-color: #404044;
+}
+
+.contenido_principal > section:nth-of-type(1) article img {
+    margin-bottom: 18px;
+}
+
+.contenido_principal > section:nth-of-type(1) h2 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.contenido_principal > section:nth-of-type(1) p {
+    font-size: 0.85rem;
+    color: var(--color-texto-gris);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   SECCIÓN 2: CATEGORÍAS DEL LABORATORIO
+   ========================================================================== */
+.contenido_principal > section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+/* Encabezados de la sección de categorías (abarcan el ancho completo de las 2 columnas) */
+.contenido_principal > section:nth-of-type(2) > p {
+    grid-column: 1 / -1;
+    color: var(--color-primario);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: -14px;
+}
+
+.contenido_principal > section:nth-of-type(2) > h2 {
+    grid-column: 1 / -1;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+/* Tarjetas de categorías individuales */
+.contenido_principal > section:nth-of-type(2) article {
+    position: relative;
+    background-color: var(--color-bg-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 260px;
+    display: flex;
+    align-items: flex-end;
+    transition: border-color 0.25s ease;
+}
+
+.contenido_principal > section:nth-of-type(2) article:hover {
+    border-color: var(--color-primario);
+}
+
+.contenido_principal > section:nth-of-type(2) article a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+}
+
+.contenido_principal > section:nth-of-type(2) article a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.contenido_principal > section:nth-of-type(2) article:hover a img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+/* Título de la categoría superpuesto sobre la imagen */
+.contenido_principal > section:nth-of-type(2) article h3 {
+    position: relative;
+    z-index: 2;
+    padding: 24px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-texto-blanco);
+    pointer-events: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Insignia / Ícono rojo en la esquina superior izquierda estilo mockup */
+.contenido_principal > section:nth-of-type(2) article::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-primario);
+    border-radius: 4px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA
+   ========================================================================== */
+.pie-principal {
+    background-color: #0A0A0A;
+    border-top: 1px solid var(--color-borde);
+    padding: 40px 24px;
+}
+
+.pie-principal ul {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pie-principal li {
+    color: var(--color-texto-gris);
+    font-size: 0.95rem;
+}
+
+.pie-principal a {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-texto-blanco);
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.pie-principal a:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD (Tablets y Dispositivos Móviles)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .contenido_principal > section:nth-of-type(1) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .cabecera-principal {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .contenido_principal > section:nth-of-type(1) {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido_principal > section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    .pie-principal ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
