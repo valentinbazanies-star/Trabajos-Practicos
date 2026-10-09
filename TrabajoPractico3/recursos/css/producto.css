@@ -40,9 +40,9 @@ img {
     display: block;
 }
 
-/* ==========================================================================
-   CABECERA PRINCIPAL (Con logo escalado al doble)
-   ========================================================================== */
+
+
+
 header {
     max-width: var(--max-width);
     width: 100%;
@@ -83,9 +83,9 @@ header nav a:hover {
     color: var(--color-texto-blanco);
 }
 
-/* ==========================================================================
-   CONTENIDO PRINCIPAL (Ficha de Producto)
-   ========================================================================== */
+
+
+
 main {
     max-width: var(--max-width);
     width: 100%;
@@ -94,7 +94,7 @@ main {
     flex: 1;
 }
 
-/* Tarjeta principal distribuida en 2 columnas */
+
 main article {
     background-color: var(--color-bg-tarjeta);
     border: 1px solid var(--color-borde);
@@ -112,7 +112,7 @@ main article {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Imagen del producto */
+
 main article img {
     grid-area: imagen;
     width: 100%;
@@ -124,7 +124,7 @@ main article img {
     padding: 20px;
 }
 
-/* Título */
+
 main article h1 {
     grid-area: titulo;
     font-size: clamp(1.6rem, 2.5vw, 2.2rem);
@@ -134,7 +134,7 @@ main article h1 {
     letter-spacing: -0.01em;
 }
 
-/* Precio destacado en rojo */
+
 main article p:has(strong) {
     grid-area: precio;
     font-size: 1.6rem;
@@ -145,7 +145,7 @@ main article p:has(strong) {
     margin: 0;
 }
 
-/* Descripción del producto */
+
 main article p:not(:has(strong)) {
     grid-area: descripcion;
     color: var(--color-texto-gris);
@@ -154,9 +154,9 @@ main article p:not(:has(strong)) {
     margin: 0;
 }
 
-/* ==========================================================================
-   PIE DE PÁGINA
-   ========================================================================== */
+
+
+
 footer {
     background-color: #0A0A0A;
     border-top: 1px solid var(--color-borde);
@@ -191,9 +191,8 @@ footer a:hover {
     background-color: var(--color-primario-hover);
 }
 
-/* ==========================================================================
-   RESPONSIVIDAD (Móviles y Tablets)
-   ========================================================================== */
+
+
 @media (max-width: 850px) {
     main article {
         grid-template-columns: 1fr;
