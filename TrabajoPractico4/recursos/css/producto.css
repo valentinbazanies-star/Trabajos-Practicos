@@ -1,0 +1,217 @@
+:root {
+    --color-bg-principal: #0F0F0F;
+    --color-bg-tarjeta: #1B1B1D;
+    --color-bg-hover: #242428;
+    --color-primario: #E51D1D;
+    --color-primario-hover: #C81515;
+    --color-texto-blanco: #FFFFFF;
+    --color-texto-gris: #9E9E9E;
+    --color-borde: #2A2A2E;
+    --fuente-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --max-width: 1100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-principal);
+    color: var(--color-texto-blanco);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ----- header ----- */
+
+header {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+header > a {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header > a img {
+    transform: scale(2);
+    transform-origin: left center;
+}
+
+header nav {
+    display: flex;
+    gap: 32px;
+}
+
+header nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-texto-gris);
+}
+
+header nav a:hover {
+    color: var(--color-texto-blanco);
+}
+
+/* ---- contenido main ----- */
+
+main {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 24px;
+    flex: 1;
+}
+
+
+main article {
+    background-color: var(--color-bg-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-areas:
+        "imagen titulo"
+        "imagen precio"
+        "imagen descripcion";
+    column-gap: 48px;
+    row-gap: 20px;
+    align-items: start;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+main article img {
+    grid-area: imagen;
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    background-color: #121214;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+main article h1 {
+    grid-area: titulo;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 900;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+main article .precio {
+    grid-area: precio;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 16px;
+    margin: 0;
+}
+
+main article .descripcion {
+    grid-area: descripcion;
+    color: var(--color-texto-gris);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ---footer ---*/
+
+footer {
+    background-color: #0A0A0A;
+    border-top: 1px solid var(--color-borde);
+    padding: 30px 24px;
+    margin-top: auto;
+}
+
+footer ul {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer li {
+    color: var(--color-texto-gris);
+    font-size: 0.95rem;
+}
+
+footer a {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-texto-blanco);
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+footer a:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* ----responsive ----*/
+
+@media (max-width: 850px) {
+    main article {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titulo"
+            "imagen"
+            "precio"
+            "descripcion";
+        padding: 24px;
+        gap: 20px;
+    }
+
+    main article img {
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer ul {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
