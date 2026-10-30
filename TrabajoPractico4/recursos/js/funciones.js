@@ -1,30 +1,29 @@
-//Script de funciones de catalogo
-function renderizarProductos(productos,contenedor){
-let productosHTML =''
-productos.forEach((producto)=>{
-    productosHTML +=` 
-                <article>
-                    <h3>
-                       ${producto,nombre}
-                    </h3>
-                    <picture>                     
-                           <img src="${producto.imagen}" alt="${producto,nombre}">                      
-                    </picture>
-                    <p>
-                     ${producto,descripcion}
-                    </p>
-                    <ul>
-                        <li>Presentacion ${producto.presentacion[0]}</li>
-                        <li>Precio $ ${productosHTML.precio}</li>
-                    </ul>
-                </article>`  
-          
-})
+function renderizarProductos(productos, contenedor) {
+    let productosHTML = '';
+    productos.forEach((producto) => {
+        productosHTML += ` 
+            <article>
+                <h3>
+                <a href="${producto.link}">
+                   ${producto.nombre}
+                   </a>
+                </h3>
+                <picture>
+                <a href="${producto.link}">                    
+                    <img src="${producto.imagen}" alt="${producto.nombre}">    
+                    </a>                 
+                </picture>
+                <p>
+                 ${producto.descripcion || producto.Descripcion}
+                </p>
+                <ul>
+                    <li>Presentación: ${producto.Tamaño || producto.tamaño}</li>
+                    <li>Precio: ${producto.precio || producto.Precio}</li>
+                </ul>
+            </article>`;
+    });
 
-
-contenedor.innerHTML = productosHTML
+    contenedor.innerHTML = productosHTML;
 }
 
-export default renderizarProductos
-
-//Fin de script
+export default renderizarProductos;
